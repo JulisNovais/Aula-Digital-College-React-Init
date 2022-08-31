@@ -1,16 +1,19 @@
-
+import Book from "./components/Book";
 
 function App() {
+  let Livros = [
+    {id: 1, title: 'senhor dos aneis'},
+    {id: 2,title: 'o poderoso chefao'},
+    {id: 3,title: 'carrie, a estranha'},
+    {id: 4,title: 'alien'},
+  ];
+
   return (
-   <div>
-    <h1>Livros</h1>
     <div>
-      <ul>
-        <li>Memorias de uma Gueixa</li>
-        <li> O prícipe</li>
-        <li> Simarilion </li>
-      </ul>
-    </div>
+      <h1>Livros</h1>
+      <div>
+      {Livros.map(i => <Book key={i.id} id={i.id} title={i.title}/>)}
+      </div>
     </div>
   );
 }
